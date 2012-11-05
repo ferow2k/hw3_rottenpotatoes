@@ -16,6 +16,7 @@ end
 group :test do
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
+  gem "factory_girl_rails", "~> 4.0"
 end
 group :production do
 #  gem 'pg'
@@ -24,7 +25,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'therubyracer'              
+  gem 'therubyracer'
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
@@ -40,3 +41,11 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'haml'
+
+# Use simplecov for test coverage reports
+gem 'simplecov'
+
+# add to end of Gemfile
+group :test, :development do
+  gem 'rspec-rails'
+end

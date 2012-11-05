@@ -38,3 +38,7 @@ end
 Then /I should see all of the movies/ do
   assert page.has_xpath?('.//table[@id="movies"]//tbody//tr', :count => 10)
 end
+
+Then /the director of "(.*)" should be "(.*)"/ do |title, director|
+  Movie.find_by_title(title).director.should be == director
+end
